@@ -508,24 +508,6 @@
 <!-- education section ends -->
 
 <!-- contact section starts -->
-<script>
-  function submitForm() {
-    var form = document.getElementById("contact-form");
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", form.action);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        // Form submitted successfully
-        alert("Thank you for your message!");
-      } else {
-        // Form submission failed
-        alert("Form submission failed. Please try again.");
-      }
-    };
-    xhr.send(new FormData(form));
-  }
-</script>
 <section class="contact" id="contact">
   
   <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
@@ -535,7 +517,7 @@
       <div class="image-box">
         <img draggable="false" src="./assets/images/contact1.png" alt="">
       </div>
-    <form id="contact-form" method="post" action="submit-form.php">
+    <form id="contact-form" method="post" action="https://formspree.io/f/xjvpwdrn">
       
       <div class="form-group">
         <div class="field">
@@ -543,7 +525,7 @@
           <i class='fas fa-user'></i>
         </div>
         <div class="field">
-          <input type="text" name="email" placeholder="Email" required>
+          <input type="text" name="_replyto" placeholder="Email" required>
           <i class='fas fa-envelope'></i>
         </div>
         <div class="field">
@@ -554,17 +536,15 @@
         <textarea placeholder="Message" name="message" required></textarea>
         <i class="fas fa-comment-dots"></i>
         </div>
-        <input type="hidden" name="recipient" value="aloukikaditya@gmail.com">
       </div>
       <div class="button-area">
-        <button type="button" onclick="submitForm()">
-          Submit <i class="fa fa-paper-plane"></i></button>
+        <button type="submit">Submit <i class="fa fa-paper-plane"></i></button>
       </div>
     </form>
   </div>
   </div>
 </section>
-<!-- contact section ends -->
+<!-- contact section ends --> 
 
 
 
