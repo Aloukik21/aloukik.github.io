@@ -8,7 +8,6 @@ This repository contains the source code for my personal portfolio website, whic
 - [Technologies Used](#technologies-used)
 - [How to Use](#how-to-use)
 - [Credits](#credits)
-- [License](#license)
 
 ## Features
 
