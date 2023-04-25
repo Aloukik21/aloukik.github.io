@@ -508,6 +508,7 @@
 <!-- education section ends -->
 
 <!-- contact section starts -->
+<!-- contact section starts -->
 <section class="contact" id="contact">
   
   <h2 class="heading"><i class="fas fa-headset"></i> Get in <span>Touch</span></h2>
@@ -517,7 +518,7 @@
       <div class="image-box">
         <img draggable="false" src="./assets/images/contact1.png" alt="">
       </div>
-    <form id="contact-form" method="post" action="mailto:aloukikaditya@gmail.com">
+    <form id="contact-form" method="post" action="submit-form.php">
       
       <div class="form-group">
         <div class="field">
@@ -536,9 +537,10 @@
         <textarea placeholder="Message" name="message" required></textarea>
         <i class="fas fa-comment-dots"></i>
         </div>
-        </div>
+        <input type="hidden" name="recipient" value="aloukikaditya@gmail.com">
+      </div>
       <div class="button-area">
-        <button type="submit">
+        <button type="button" onclick="submitForm()">
           Submit <i class="fa fa-paper-plane"></i></button>
       </div>
     </form>
@@ -546,6 +548,25 @@
   </div>
 </section>
 <!-- contact section ends -->
+
+<script>
+  function submitForm() {
+    var form = document.getElementById("contact-form");
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", form.action);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        // Form submitted successfully
+        alert("Thank you for your message!");
+      } else {
+        // Form submission failed
+        alert("Form submission failed. Please try again.");
+      }
+    };
+    xhr.send(new FormData(form));
+  }
+</script>
 
 <!-- footer section starts -->
 <section class="footer">
